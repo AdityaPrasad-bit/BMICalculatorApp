@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 class CalculateViewController: UIViewController {
 
     var calculatorBrain = CalculatorBrain()
@@ -18,6 +17,7 @@ class CalculateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+   
     }
 
     @IBAction func uisliderHeight(_ sender: UISlider) {
@@ -41,6 +41,9 @@ class CalculateViewController: UIViewController {
         if segue.identifier == "goToResult"{
             let destination = segue.destination as! ResultViewController
             destination.bmiValue = calculatorBrain.getBMiValue()
+            destination.advice = calculatorBrain.getAdvice()
+            destination.color = calculatorBrain.getColor()
+            destination.lottieAnimation = calculatorBrain.getLottieAnimation()
         }
         else{
             
